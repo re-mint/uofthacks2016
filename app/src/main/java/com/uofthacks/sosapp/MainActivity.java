@@ -22,6 +22,15 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String SEVERITY = "com.uofthacks.sosapp.SEVERITY";
+
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, SeverityActivity.class);
+        intent.putExtra(SEVERITY, view.getId());
+        startActivity(intent);
+    }
+
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -129,4 +138,5 @@ public class MainActivity extends AppCompatActivity {
         AppIndex.AppIndexApi.end(client, viewAction);
         client.disconnect();
     }
+
 }
