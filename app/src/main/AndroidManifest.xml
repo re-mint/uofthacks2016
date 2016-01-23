@@ -23,7 +23,7 @@
             android:label="@string/title_activity_fargps"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Severity"
+            android:name=".SeverityActivity"
             android:label="@string/title_activity_severity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

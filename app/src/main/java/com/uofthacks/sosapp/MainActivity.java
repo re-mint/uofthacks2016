@@ -12,6 +12,8 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String SEVERITY = "com.uofthacks.sosapp.SEVERITY";
+
     public void getHelp(View view) {
         Intent intent = new Intent(this, FARGPS.class);
         startActivity(intent);
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     // Custom code starts here...
 
     public void sendMessage(View view) {
-        // Do something
+        Intent intent = new Intent(this, SeverityActivity.class);
+        intent.putExtra(SEVERITY, view.getId());
     }
 }
