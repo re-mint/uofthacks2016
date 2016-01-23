@@ -26,7 +26,7 @@
             android:label="@string/title_activity_fargps"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Severity"
+            android:name=".SeverityActivity"
             android:label="@string/title_activity_severity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
