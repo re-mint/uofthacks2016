@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String SEVERITY = "com.uofthacks.sosapp.SEVERITY";
 
     public void sendMessage(View view) {
-        Intent intent = new Intent(this, SeverityActivity.class);
+        Intent intent = new Intent(this, MapsActivity.class);
         intent.putExtra(SEVERITY, view.getId());
         startActivity(intent);
     }
