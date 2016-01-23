@@ -54,4 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    // Custom code starts here...
+
+    public void sendMessage(View view) {
+        // Do something
+    }
 }
