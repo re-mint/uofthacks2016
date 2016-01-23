@@ -36,23 +36,13 @@ public class MainActivity extends AppCompatActivity {
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
-    final private Client newClient = new Client();
 
     public void getHelp(View view) {
         Intent intent = new Intent(this, FARGPS.class);
+        intent.putExtra(SEVERITY, "medium");
+
         startActivity(intent);
-        newClient.setEmail("howard-f@hotmail.com");
-        newClient.setfName("Howard");
-        newClient.setlName("Fung");
-        newClient.setPassword("notpassword");
-        newClient.setPhoneNumber("6472424788");
-        newClient.setUsername("not-howard");
-        newClient.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                //
-            }
-        });
+
     }
 
     protected void onCreate(Bundle savedInstanceState) {
