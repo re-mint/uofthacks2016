@@ -3,6 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/thanks">
-
+    <include layout="@layout/content_main" />
 
 </android.support.design.widget.CoordinatorLayout>

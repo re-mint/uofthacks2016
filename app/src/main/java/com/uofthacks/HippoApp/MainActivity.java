@@ -37,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Parse.initialize(this, "ebWQIMSb18BQ4MF3hKUNeMxdg3v8IN98YB5Tpje5", "hWXefeWUWCum3hIcrbZjZcwlk4z05Ms4LjOTF5VZ");
+        Parse.initialize(this, "ebWQIMSb18BQ4MF3hKUNeMxdg3v8IN98YB5Tpje5",
+                "hWXefeWUWCum3hIcrbZjZcwlk4z05Ms4LjOTF5VZ");
 
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickSignUp(View view){
-        Intent intent = new Intent(this, SignUpActivity.class);
+        Intent intent = new Intent(this, SigningUp.class);
         startActivity(intent);
     }
 
