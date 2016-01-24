@@ -14,7 +14,10 @@ import android.location.LocationManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.ParseCloud;
 import com.uofthacks.HippoApp.R;
+
+import java.util.HashMap;
 
 public class HelpOnway extends AppCompatActivity implements LocationListener {
 
@@ -41,8 +44,13 @@ public class HelpOnway extends AppCompatActivity implements LocationListener {
         provider = locationManager.getBestProvider(criteria, false);
 
         if (provider == null) {
-            latitudeField.setText("Location not available");
-            longitudeField.setText("Location not available");
+
+            //latitudeField.setText("Location not available");
+            //longitudeField.setText("Location not available");
+
+            //for demonstration:
+            packageLocation(43.65975037463856, -79.39734930172563);
+
         } else {
 
             // Handle security exception, and... initialize the location fields
@@ -102,7 +110,11 @@ public class HelpOnway extends AppCompatActivity implements LocationListener {
                 Toast.LENGTH_SHORT).show();
     }
 
-    public void packageLocation(String provider) {
+    public void packageLocation(double lat, double lon) {
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("longitude", (float) lon);
+        params.put("latitude", (float) lat);
+        ParseCloud.callFunctionInBackground("getClosestResponder", params);
 
     }
 }
