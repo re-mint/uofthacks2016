@@ -16,6 +16,7 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseInstallation;
 import com.parse.SaveCallback;
 
 import java.io.IOException;
@@ -55,14 +56,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void onCreate(Bundle savedInstanceState) {
+        Parse.enableLocalDatastore(this);
+
+        Parse.initialize(this, "ebWQIMSb18BQ4MF3hKUNeMxdg3v8IN98YB5Tpje5", "hWXefeWUWCum3hIcrbZjZcwlk4z05Ms4LjOTF5VZ");
+        ParseInstallation.getCurrentInstallation().saveInBackground();
+
+
         GPSTracker gps = new GPSTracker(this);
 
         if (!gps.isGPSEnabled)
             gps.showSettingsAlert();
 
         super.onCreate(savedInstanceState);
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this);
+//        Parse.initialize(this);
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

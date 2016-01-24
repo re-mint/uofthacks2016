@@ -11,6 +11,12 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.parse.FunctionCallback;
+import com.parse.ParseCloud;
+import com.parse.ParseException;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class FAR_MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -24,6 +30,26 @@ public class FAR_MapsActivity extends FragmentActivity implements OnMapReadyCall
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        Intent intent = getIntent();
+
+        // PERSON IN NEED OF AID
+        double latitude = intent.getDoubleExtra(MainActivity.LATITUDE, 0);
+        double longitude = intent.getDoubleExtra(MainActivity.LONGITUDE,0);
+
+        Map<String,Object> params = new HashMap<String, Object>();
+        params.put("latitude",latitude);
+        params.put("longitude",longitude);
+        params.put("situation","");
+        ParseCloud.callFunctionInBackground("getClosestResponder", params, new FunctionCallback<Object>() {
+            @Override
+            public void done(Object object, ParseException e) {
+                Log.d("Get Closest Responder", "done: yoyo");
+            }
+        });
+
+
+
     }
 
 
