@@ -16,7 +16,4 @@ A potentially life-saving mobile app to request for help in a crisis situation.
 
 ## Contributors
 
-Howard Fung
-Miranda Pinto
-Matt Pua
-Eric Jadidzadeh
+Howard Fung, Miranda Pinto, Matt Pua, Eric Jadidzadeh
