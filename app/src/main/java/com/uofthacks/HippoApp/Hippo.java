@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
-public class StartPage extends AppCompatActivity {
+public class Hippo extends AppCompatActivity {
     private Handler mHandler = new Handler();
 
     @Override
