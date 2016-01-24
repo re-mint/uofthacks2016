@@ -24,8 +24,8 @@
         android:layout_marginTop="80dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="280dp"
-        android:layout_above="@+id/Login" />
+        android:layout_marginBottom="110dp"
+        android:layout_above="@+id/signUp" />
 
     <ImageButton
         android:layout_width="fill_parent"
@@ -43,25 +43,32 @@
         android:id="@+id/mild"
         android:background="@drawable/button_minornp"
         android:onClick="sendMessage"
-        android:layout_marginTop="140dp"
-        android:layout_marginBottom="150dp" />
+        android:layout_marginTop="290dp"
+        android:layout_marginBottom="140dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Login"
+        android:onClick="onClickLogin"
+        android:background="@drawable/button_loginnp"
         android:layout_alignParentBottom="true"
         android:layout_alignEnd="@+id/mild"
-        android:layout_marginBottom="53dp"
-        android:onClick="onClickLogin"/>
+        android:layout_marginStart="191dp"
+        android:layout_marginTop="137dp"
+        android:layout_alignTop="@+id/mild"
+        android:layout_alignParentStart="true" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/signUp"
+        android:background="@drawable/button_signupnp"
         android:layout_alignBottom="@+id/Login"
-        android:layout_marginEnd="235dp"
-        android:layout_alignTop="@+id/Login"
-        android:onClick="onClickSignUp"/>
+        android:onClick="onClickSignUp"
+        android:layout_marginEnd="200dp"
+        android:layout_alignTop="@+id/mild"
+        android:layout_alignEnd="@+id/Login"
+        android:layout_marginTop="136dp" />
 
 </RelativeLayout>
