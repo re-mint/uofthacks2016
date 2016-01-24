@@ -1,4 +1,4 @@
-package com.uofthacks.sosapp;
+package com.uofthacks.HippoApp;
 
 import org.junit.Test;
 
