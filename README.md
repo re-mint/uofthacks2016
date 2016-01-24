@@ -4,9 +4,12 @@
 
 A potentially life-saving mobile app to request for help in a crisis situation.
 
+
 ## Screenshots
 
-![Splash page](screenshots/github_logo.jpg?raw=true "Logo")
-![Home page](screenshots/github_main.jpg?raw=true "Main")
+<img src="screenshots/github_logo.jpg" alt="Logo page" style="border:1px solid black">
+<img src="screenshots/github_main.jpg" alt="Home page" style="border:1px solid black">
+<img src="screenshots/github_greenalert.jpg" alt="Green alert" style="border:1px solid black">
+
 
 ## Contributors
