@@ -34,20 +34,32 @@ public class HelpOnway extends AppCompatActivity implements LocationListener {
         // Get the location manager, and....
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
+
+        // Try getting provider.
+
         Criteria criteria = new Criteria();
         provider = locationManager.getBestProvider(criteria, false);
 
-
-        // Handle security exception, and... initialize the location fields
-        try {
-            Location location = locationManager.getLastKnownLocation(provider);
-            System.out.println("Provider " + provider + " has been selected.");
-            onLocationChanged(location); // ...this also sets the text view
-
-        } catch (SecurityException e) {
+        if (provider == null) {
             latitudeField.setText("Location not available");
             longitudeField.setText("Location not available");
+        } else {
+
+            // Handle security exception, and... initialize the location fields
+            try {
+                Location location = locationManager.getLastKnownLocation(provider);
+                System.out.println("Provider " + provider + " has been selected.");
+                onLocationChanged(location); // ...this also sets the text view
+
+            } catch (SecurityException e) {
+                latitudeField.setText("Location not available");
+                longitudeField.setText("Location not available");
+            }
+
         }
+
+
+
 
 
         /*
