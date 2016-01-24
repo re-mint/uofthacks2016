@@ -47,6 +47,9 @@ public class FARGPS extends AppCompatActivity {
             rl.setBackgroundColor(Color.GREEN);
         }
 
+        TextView severityText = (TextView) findViewById(R.id.severityAlert);
+        severityText.setText((severity + " MEDICAL ATTENTION").toUpperCase());
+
         GPSTracker gps = new GPSTracker(this);
         if (!gps.isGPSEnabled)
             gps.showSettingsAlert();

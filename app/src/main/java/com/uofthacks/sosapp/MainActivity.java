@@ -55,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void onCreate(Bundle savedInstanceState) {
+        GPSTracker gps = new GPSTracker(this);
+
+        if (!gps.isGPSEnabled)
+            gps.showSettingsAlert();
+
         super.onCreate(savedInstanceState);
         Parse.enableLocalDatastore(this);
         Parse.initialize(this);

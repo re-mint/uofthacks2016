@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="SOME MEDICAL ATTENTION"
-        android:id="@+id/textView"
+        android:id="@+id/severityAlert"
         android:layout_below="@+id/t"
         android:layout_centerHorizontal="true"/>
 
@@ -98,8 +98,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="M/F"
         android:id="@+id/sexValue"
-        android:layout_below="@+id/overview"
-        android:layout_toEndOf="@+id/textView"/>
+        android:layout_alignTop="@+id/textView4"
+        android:layout_toEndOf="@+id/severityAlert"/>
 
     <TextView
         android:layout_width="wrap_content"
