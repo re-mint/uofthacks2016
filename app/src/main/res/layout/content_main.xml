@@ -32,6 +32,7 @@
         android:layout_below="@+id/help"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:tag="immediate"
         android:onClick="sendMessage" />
 
     <Button
@@ -42,6 +43,7 @@
         android:layout_below="@+id/immediate"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:tag="medium"
         android:onClick="sendMessage"/>
 
     <Button
@@ -52,6 +54,7 @@
         android:layout_below="@+id/medium"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:tag="mild"
         android:onClick="sendMessage"/>
 
     <ImageButton

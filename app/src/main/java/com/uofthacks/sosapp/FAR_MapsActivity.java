@@ -36,11 +36,18 @@ public class FAR_MapsActivity extends FragmentActivity implements OnMapReadyCall
         // PERSON IN NEED OF AID
         double latitude = intent.getDoubleExtra(MainActivity.LATITUDE, 0);
         double longitude = intent.getDoubleExtra(MainActivity.LONGITUDE,0);
+        HashMap<String,String> situation = new HashMap<String,String>();
+
+        situation.put("age","15");
+        situation.put("sex","F");
+        situation.put("severity",""+intent.getStringExtra(MainActivity.SEVERITY));
 
         Map<String,Object> params = new HashMap<String, Object>();
         params.put("latitude",latitude);
-        params.put("longitude",longitude);
-        params.put("situation","");
+        params.put("longitude", longitude);
+
+        params.put("situation", situation);
+
         ParseCloud.callFunctionInBackground("getClosestResponder", params, new FunctionCallback<Object>() {
             @Override
             public void done(Object object, ParseException e) {
