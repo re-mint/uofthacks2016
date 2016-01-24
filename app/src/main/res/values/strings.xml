@@ -3,6 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_fargps">FARGPS</string>
     <string name="title_activity_severity">Severity</string>
+
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
@@ -24,7 +25,14 @@
     <string name="title_activity_sign_up_pop_up">SignUpPopUp</string>
 
     <string name="title_activity_start_page">StartPage</string>
+    <string name="title_activity_legal">Legal</string>
+    <string name="title_activity_help_onway">HelpOnway</string>
+
+    <string name="google_app_id"></string>
+
+
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="title_activity_legal">Legal</string>
+
+
 </resources>

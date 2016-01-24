@@ -15,8 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String SEVERITY = "com.uofthacks.sosapp.SEVERITY";
 
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, MapsActivity.class);
+    public void getHelp(View view) {
+        Intent intent = new Intent(this, HelpOnway.class);
         intent.putExtra(SEVERITY, view.getId());
         startActivity(intent);
     }
@@ -28,8 +28,9 @@ public class MainActivity extends AppCompatActivity {
      */
     private GoogleApiClient client;
 
-    public void getHelp(View view) {
-        Intent intent = new Intent(this, FARGPS.class);
+
+    public void responderView(View view) { //on push notification receive
+        Intent intent = new Intent(this, FARGPS.class); //Also check the MapsActivity.class
         startActivity(intent);
     }
 
