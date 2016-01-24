@@ -12,7 +12,14 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 public class FARGPS extends AppCompatActivity {
+    GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +66,24 @@ public class FARGPS extends AppCompatActivity {
 //            }else
 //            Log.d("gps","Cannot retrieve GPS location right now.");
         }
-
     }
 
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mMap == null) {
+            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+
+            Intent intent = getIntent();
+            double latitude = intent.getDoubleExtra(MainActivity.LATITUDE, 0);
+            double longitude = intent.getDoubleExtra(MainActivity.LONGITUDE,0);
+            Log.d("coordinates",latitude + " " + longitude);
+            // Add a marker in Sydney and move the camera
+            LatLng marker = new LatLng(latitude, longitude);
+            mMap.addMarker(new MarkerOptions().position(marker).title("Marker somewhere"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(marker));
+        }
+    }
 }

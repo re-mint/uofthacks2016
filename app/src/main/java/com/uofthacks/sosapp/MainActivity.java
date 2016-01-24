@@ -23,10 +23,14 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     public static final String SEVERITY = "com.uofthacks.sosapp.SEVERITY";
-
+    public static final String LATITUDE = "com.uofthacks.sosapp.LATITUDE";
+    public static final String LONGITUDE = "com.uofthacks.sosapp.LONGITUDE";
+    // Send message to patient ack
     public void sendMessage(View view) {
-        Intent intent = new Intent(this, MapsActivity.class);
+        Intent intent = new Intent(this, FAR_MapsActivity.class);
         intent.putExtra(SEVERITY, view.getId());
+        intent.putExtra(LATITUDE,43.7);
+        intent.putExtra(LONGITUDE,-79.4 );
         startActivity(intent);
     }
 
@@ -40,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
     public void getHelp(View view) {
         Intent intent = new Intent(this, FARGPS.class);
         intent.putExtra(SEVERITY, "medium");
-
+        intent.putExtra(LATITUDE,43.7);
+        intent.putExtra(LONGITUDE,-79.4 );
         startActivity(intent);
 
     }
