@@ -1,4 +1,4 @@
-# Hippo.app
+# Hippo
 
 ## Description
 
