@@ -14,7 +14,9 @@ import android.location.LocationManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.FunctionCallback;
 import com.parse.ParseCloud;
+import com.parse.ParseException;
 import com.uofthacks.HippoApp.R;
 
 import java.util.HashMap;
@@ -114,7 +116,13 @@ public class HelpOnway extends AppCompatActivity implements LocationListener {
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("longitude", (float) lon);
         params.put("latitude", (float) lat);
-        ParseCloud.callFunctionInBackground("getClosestResponder", params);
+        ParseCloud.callFunctionInBackground("getClosestResponder", params, new
+                FunctionCallback() {
+                    @Override
+                    public void done(Object object, ParseException e) {
+                        // Interpret errors here...
+                    }
+        });
 
     }
 }
