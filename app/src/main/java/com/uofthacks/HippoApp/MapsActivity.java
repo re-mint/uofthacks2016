@@ -1,4 +1,4 @@
-package com.uofthacks.sosapp;
+package com.uofthacks.HippoApp;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;

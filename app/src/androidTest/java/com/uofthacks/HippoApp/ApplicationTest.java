@@ -1,4 +1,4 @@
-package com.uofthacks.sosapp;
+package com.uofthacks.HippoApp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
