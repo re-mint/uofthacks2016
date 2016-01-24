@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class FARGPS extends AppCompatActivity {
 
@@ -40,6 +41,25 @@ public class FARGPS extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        GPSTracker gps = new GPSTracker(this);
+        if (!gps.isGPSEnabled)
+            gps.showSettingsAlert();
+        // TODO: NEED TO FIX THIS
+        else{
+//            if (gps.canGetLocation){
+                double latitude = 46;//gps.getLatitude();
+                double longitude = 35;//gps.getLongitude();
+                int age = 21;
+                String sex = "M";
+                TextView tv1 = (TextView) findViewById(R.id.ageValue);
+                TextView tv2 = (TextView) findViewById(R.id.sexValue);
+
+                tv1.setText(""+age);
+                tv2.setText(sex);
+//            }else
+//            Log.d("gps","Cannot retrieve GPS location right now.");
+        }
+
     }
 
 }
