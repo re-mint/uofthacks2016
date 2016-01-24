@@ -1,5 +1,7 @@
 package com.uofthacks.HippoApp;
 
+import android.content.Intent;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Context;
@@ -12,7 +14,7 @@ import android.location.LocationManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.uofthacks.sosapp.R;
+import com.uofthacks.HippoApp.R;
 
 public class HelpOnway extends AppCompatActivity implements LocationListener {
 
@@ -34,6 +36,7 @@ public class HelpOnway extends AppCompatActivity implements LocationListener {
 
         Criteria criteria = new Criteria();
         provider = locationManager.getBestProvider(criteria, false);
+
 
         // Handle security exception, and... initialize the location fields
         try {

@@ -13,13 +13,13 @@
     tools:context="com.uofthacks.HippoApp.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <!-- These buttons are temporary. They will become ImageButtons. -->
+    <!-- These buttons are now ImageButtons. -->
 
     <ImageButton
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/immediate"
-        android:onClick="sendMessage"
+        android:onClick="getHelp"
         android:background="@drawable/button_criticalnp"
         android:layout_marginTop="80dp"
         android:layout_alignParentTop="true"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/medium"
         android:background="@drawable/button_moderatenp"
-        android:onClick="sendMessage"
+        android:onClick="getHelp"
         android:layout_marginTop="105dp"
         android:layout_marginBottom="250dp"
         android:layout_alignTop="@+id/immediate" />
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/mild"
         android:background="@drawable/button_minornp"
-        android:onClick="sendMessage"
+        android:onClick="getHelp"
         android:layout_marginTop="290dp"
         android:layout_marginBottom="140dp" />
 

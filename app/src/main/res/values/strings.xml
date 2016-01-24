@@ -28,6 +28,8 @@
     <string name="title_activity_legal">Legal</string>
     <string name="title_activity_help_onway">HelpOnway</string>
 
+    <string name="google_app_id"></string>
+
 
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
