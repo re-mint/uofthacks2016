@@ -43,6 +43,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="About the Situation"
         android:id="@+id/overview"
+        android:layout_marginTop="41dp"
         android:layout_below="@+id/frameLayout"
         android:layout_centerHorizontal="true"/>
 
@@ -59,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="OME MEDICAL ATTENTION"
+        android:text="SOME MEDICAL ATTENTION"
         android:id="@+id/textView"
         android:layout_below="@+id/t"
         android:layout_centerHorizontal="true"/>
@@ -103,11 +104,38 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Additional Information About the Patient"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Distance to Patient:"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/frameLayout"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Distance"
+        android:id="@+id/distance"
+        android:layout_below="@+id/frameLayout"
+        android:layout_alignEnd="@+id/textView4"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="911 Status:"
         android:id="@+id/textView3"
         android:layout_below="@+id/textView2"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="74dp"/>
+        android:layout_marginTop="28dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Not Called"
+        android:id="@+id/status911"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

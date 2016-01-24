@@ -41,12 +41,20 @@ public class FAR_MapsActivity extends FragmentActivity implements OnMapReadyCall
         mMap = googleMap;
         Intent intent = getIntent();
 
+        // PERSON IN NEED OF AID
         double latitude = intent.getDoubleExtra(MainActivity.LATITUDE, 0);
         double longitude = intent.getDoubleExtra(MainActivity.LONGITUDE,0);
-        Log.d("coordinates",latitude + " " + longitude);
-        // Add a marker in Sydney and move the camera
-        LatLng marker = new LatLng(latitude, longitude);
-        mMap.addMarker(new MarkerOptions().position(marker).title("Marker somewhere"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(marker));
+
+        // CURRENT PERSON
+        double myLatitude = 43.7;
+        double myLongitude = -79.3;
+
+        LatLng personInNeedMarker = new LatLng(latitude, longitude);
+        mMap.addMarker(new MarkerOptions().position(personInNeedMarker).title("Person Needs Help!"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(personInNeedMarker));
+
+        LatLng FAR = new LatLng(myLatitude, myLongitude);
+        mMap.addMarker(new MarkerOptions().position(FAR).title("My Current Location"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(FAR));
     }
 }
