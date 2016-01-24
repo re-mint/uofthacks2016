@@ -27,12 +27,18 @@ public class MainActivity extends AppCompatActivity {
     public static final String SEVERITY = "com.uofthacks.sosapp.SEVERITY";
     public static final String LATITUDE = "com.uofthacks.sosapp.LATITUDE";
     public static final String LONGITUDE = "com.uofthacks.sosapp.LONGITUDE";
+
+    private static boolean isParseEnabled = false;
     // Send message to patient ack
     public void sendMessage(View view) {
         Intent intent = new Intent(this, FAR_MapsActivity.class);
+        Random r = new Random();
+
+        double randomLat = -0.25 + (0.25 - -0.25) * r.nextDouble();
+        double randomLong = -0.25  + (0.25 - -0.25) * r.nextDouble();
         intent.putExtra(SEVERITY, ""+view.getTag());
-        intent.putExtra(LATITUDE,43.7);
-        intent.putExtra(LONGITUDE,-79.4 );
+        intent.putExtra(LATITUDE,43.7 + randomLat);
+        intent.putExtra(LONGITUDE,-79.4 + randomLong );
         startActivity(intent);
     }
 
@@ -46,20 +52,26 @@ public class MainActivity extends AppCompatActivity {
     public void getHelp(View view) {
         Intent intent = new Intent(this, FARGPS.class);
         Random r = new Random();
-        int randomNumber = r.nextInt( 2 - 0 + 1) + 2;
+        int randomNumber = r.nextInt(2 - 0 + 1) + 2;
+        double randomLat = -0.25 + (0.25 - -0.25) * r.nextDouble();
+        double randomLong = -0.25  + (0.25 - -0.25) * r.nextDouble();
         String r_severity = randomNumber == 3 ? "immediate" : ( randomNumber == 2 ? "medium" : "mild");
         intent.putExtra(SEVERITY, r_severity);
-        intent.putExtra(LATITUDE,43.7);
-        intent.putExtra(LONGITUDE,-79.4 );
+        intent.putExtra(LATITUDE,43.7 + randomLat);
+        intent.putExtra(LONGITUDE,-79.4 + randomLong );
         startActivity(intent);
 
     }
 
     protected void onCreate(Bundle savedInstanceState) {
-        Parse.enableLocalDatastore(this);
+        if (!isParseEnabled){
+            Parse.enableLocalDatastore(this);
 
-        Parse.initialize(this, "ebWQIMSb18BQ4MF3hKUNeMxdg3v8IN98YB5Tpje5", "hWXefeWUWCum3hIcrbZjZcwlk4z05Ms4LjOTF5VZ");
-        ParseInstallation.getCurrentInstallation().saveInBackground();
+            Parse.initialize(this, "ebWQIMSb18BQ4MF3hKUNeMxdg3v8IN98YB5Tpje5", "hWXefeWUWCum3hIcrbZjZcwlk4z05Ms4LjOTF5VZ");
+            ParseInstallation.getCurrentInstallation().saveInBackground();
+            isParseEnabled = true;
+        }
+
 
 
         GPSTracker gps = new GPSTracker(this);
