@@ -2,7 +2,7 @@
 
 ## Description
 
-A potentially life-saving mobile app to request for nearby help in a crisis situation. Uses GPS, push notification service, and an external database to connect users with one another.
+A potentially life-saving mobile app to request for nearby help in a crisis situation. Uses GPS, push notification service and an external database (via Parse) to connect users with one another.
 
 
 ## Screenshots
